@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d080b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'">
+  <title>18 Second Challenge · Midnight Launch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-shell">
+    <header>
+      <span class="brand-mark"><img src="assets/inbox-brand-sheet.png" alt="Inbox Stores"></span>
+      <span class="event-name">Midnight Launch</span>
+    </header>
+    <main class="game-panel" data-state="ready">
+      <p class="eyebrow">THE 18 SECOND CHALLENGE</p>
+      <h1>Make every millisecond count.</h1>
+      <p class="instruction">Stop the clock at exactly <strong>18.000 seconds.</strong></p>
+      <div id="timer" class="timer" aria-label="Elapsed time">00.000</div>
+      <div class="result-area" role="status" aria-live="polite" aria-atomic="true">
+        <p id="result" class="result">Ready when you are.</p>
+        <p id="difference" class="difference">One button. One perfect moment.</p>
+      </div>
+      <button id="toggle" class="primary" type="button">Start</button>
+    </main>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
