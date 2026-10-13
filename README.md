@@ -1,6 +1,6 @@
 # Timer Game
 
-Local HTML/CSS/JavaScript game for Midnight Launch, matching the Raffle Picker's burgundy palette, system typography, and cinema-style background. The complete supplied Inbox Stores PNG is displayed with its black/white background intact. Layout and touch targets are optimized for iPad Pro in portrait and landscape. Open `index.html` in a browser. No installation or internet connection is needed on a computer.
+Local HTML/CSS/JavaScript game  for Midnight Launch, matching the Raffle Picker's burgundy palette, system typography, and cinema-style background. The complete supplied Inbox Stores PNG is displayed with its black/white background intact. Layout and touch targets are optimized for iPad Pro in portrait and landscape. Open `index.html` in a browser. No installation or internet connection is needed on a computer.
 
 One Start / Stop button controls each attempt. After stopping, Start begins a fresh attempt. Mouse and touch are registered on press; keyboard and assistive technology also work.
 
