@@ -2,6 +2,7 @@
 
 const target = 18;
 const targetMilliseconds = target * 1000;
+const winningWindowMilliseconds = 100;
 const timer = document.querySelector('#timer');
 const button = document.querySelector('#toggle');
 const result = document.querySelector('#result');
@@ -16,10 +17,11 @@ let pointerActivated = false;
 function evaluateTime(elapsedMilliseconds) {
   const milliseconds = Math.round(elapsedMilliseconds);
   const offset = milliseconds - targetMilliseconds;
+  const isWinner = offset >= 0 && offset < winningWindowMilliseconds;
   return {
     milliseconds,
     offset,
-    state: offset === 0 ? 'win' : Math.abs(offset) < 500 ? 'close' : 'lose'
+    state: isWinner ? 'win' : Math.abs(offset) < 500 ? 'close' : 'lose'
   };
 }
 
@@ -41,7 +43,7 @@ function toggleTimer() {
     timer.textContent = '00.000';
     panel.dataset.state = 'running';
     result.textContent = 'Find your perfect moment.';
-    difference.textContent = 'Stop at 18.000 seconds.';
+    difference.textContent = '18.000–18.099 seconds wins.';
     button.textContent = 'Stop';
     frame = requestAnimationFrame(animate);
     return;
@@ -53,8 +55,8 @@ function toggleTimer() {
   timer.textContent = displayTime(score.milliseconds);
   panel.dataset.state = score.state;
   result.textContent = score.state === 'win' ? 'You Win!' : score.state === 'close' ? 'So Close!' : 'Better luck next time';
-  difference.textContent = score.offset === 0
-    ? 'Exactly 18.000 seconds. Your perfect moment.'
+  difference.textContent = score.state === 'win'
+    ? 'You landed in the winning window: 18.000–18.099 seconds.'
     : `${(Math.abs(score.offset) / 1000).toFixed(3)} seconds ${score.offset < 0 ? 'early' : 'late'}.`;
   button.textContent = 'Start';
 }
